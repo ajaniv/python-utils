@@ -1,25 +1,7 @@
-#/usr/bin/env python
-# -#- coding: utf-8 -#-
-
-#
-# omcore/utils/tests/test_image_util.py - image utilities test cases
-#
-# This file is part of Obelius Media  Ad-Server  components
-#
-# This software is provided 'as-is', without any express or implied
-# warranty.  In no event will the authors be held liable for any damages
-# arising from the use of this software.
-#
-# Copyright (C) 2013-2014 Obelius Media
-#
-
-# Initial version: 2013-11-26
-# Author: Amnon Janiv <amnon.janiv@obeliusmedia.com>
-
 """
 
-..  module:: omcore.utils.tests.test_image_util.py
-    :synopsis: image utilities module  test cases
+..  module:: utils.tests.test_image.py
+    :synopsis: image utilities unit test module
 
 
 
@@ -28,41 +10,61 @@
 
 """
 
-from PIL import Image
-
 import io
 import os
+import unittest
+from PIL import Image
+from utils import image
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
-from omcore.utils import image_util
-from omcore.utils.tests.test_util import BaseAppDjangoTestCase
+CODEC = image.DEFAULT_CODEC_NAME
 
-CODEC = image_util.DEFAULT_CODEC_NAME
 
-class ImageTestCase(BaseAppDjangoTestCase):
+class BaseImageTestCase(unittest.TestCase):
     """
     Python image test case base class
     """
 
     def setUp(self):
-        super(ImageTestCase, self).setUp()
-        self.read_image = image_util.read_image(
+        super(BaseImageTestCase, self).setUp()
+        self.read_image = image.read_image(
             os.path.join(DATA_DIR, self.image_file_name))
 
     def encode_check(self):
-        encoded_image = image_util.encode(self.read_image, CODEC)
-        decoded_image = image_util.decode(encoded_image, CODEC)
+        encoded_image = image.encode(self.read_image, CODEC)
+        decoded_image = image.decode(encoded_image, CODEC)
         self.assertTrue(len(self.read_image) == len(decoded_image),
                         "Invalid decoded image")
         self.assertTrue(self.read_image == decoded_image)
         image_before = Image.open(io.BytesIO(self.read_image))
         image_after = Image.open(io.BytesIO(decoded_image))
-        image_util.diff(image_before, image_after)
+        image.diff(image_before, image_after)
 
 
-class PngImageTestCase(ImageTestCase):
+class ImageTestCase(BaseImageTestCase):
+    """
+    GIF image test case  class
+    """
+
+    image_file_name = 'image.gif'
+
+    def test_load(self):
+        loaded_image = image.load(os.path.join(DATA_DIR, self.image_file_name))
+        self.assertTrue(loaded_image)
+
+    def test_encode_file(self):
+        with open(os.path.join(DATA_DIR, self.image_file_name),
+                  'rb') as image_file:
+            encoded_image = image.encode_file(image_file)
+            self.assertTrue(encoded_image)
+
+        image.encode_file(image_file)
+        self.assertTrue(encoded_image)
+
+
+class PngImageTestCase(BaseImageTestCase):
     """
     PNG image test case  class
     """
@@ -73,7 +75,7 @@ class PngImageTestCase(ImageTestCase):
         self.encode_check()
 
 
-class JpegImageTestCase(ImageTestCase):
+class JpegImageTestCase(BaseImageTestCase):
     """
     JPEG image test case  class
     """
@@ -84,7 +86,7 @@ class JpegImageTestCase(ImageTestCase):
         self.encode_check()
 
 
-class GifImageTestCase(ImageTestCase):
+class GifImageTestCase(BaseImageTestCase):
     """
     GIF image test case  class
     """

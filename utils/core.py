@@ -7,12 +7,13 @@ and classes.
 
 
 """
-
+from __future__ import print_function
 import time
 import os
 import shutil
 import logging
 import functools
+
 
 _logger = logging.getLogger(__name__)
 
@@ -86,8 +87,8 @@ def timeit(method):
         result = method(*args, **kw)
         te = time.time()
 
-        print ('%r (%r, %r) %2.2f sec' %
-               (method.__name__, args, kw, te - ts))
+        print('%r (%r, %r) %2.2f sec' %
+              (method.__name__, args, kw, te - ts))
         return result
 
     return timed
@@ -99,7 +100,7 @@ class Timer(object):
     """
     msg = "%s elapsed time: %f ms"
 
-    def __init__(self,  user_msg,  use_clock=False,
+    def __init__(self, user_msg, use_clock=False,
                  verbose=True, logger=None):
         self.verbose = verbose
         self.logger = logger or _logger

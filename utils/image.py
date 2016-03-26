@@ -35,16 +35,11 @@ def encode_file(file, encoder_name=DEFAULT_CODEC_NAME):
         data = encode(file.read(), encoder_name)
     except ValueError:
         if file.closed:
-            file.open()
-            file_opened = True
-            data = encode(file.read(), encoder_name)
+            with open(file.name, "rb") as image_file:
+                data = encode(image_file.read(), encoder_name)
         else:
             raise
-    else:
-        file_opened = False
-    finally:
-        if file_opened:
-            file.close()
+
     return data
 
 
