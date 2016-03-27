@@ -1,15 +1,7 @@
-# this file is *not* meant to cover or endorse the use of travis, but rather to
-# help confirm pull requests to this project.
+# python-utils travis config file
+# TODO: change email address
 
 language: python
-
-# python:
-# - "2.7"
-# - "3.5"
-
-#env:
-#- TOXENV=py27
-# - TOXENV=py35
 
 matrix:
     include:
@@ -20,16 +12,9 @@ matrix:
        
 install:
   - travis_retry pip install tox
+
 script:
   - travis_retry tox
-notifications:
-  email:
-    - pyramid-checkins@lists.repoze.org
-
-
-install: pip install tox
-
-script: tox
 
 notifications:
   email:
