@@ -7,9 +7,25 @@ python:
   - "2.7"
   - "3.5"
 
-env:
-  - TOXENV=py27
-  - TOXENV=py35
+#env:
+#- TOXENV=py27
+# - TOXENV=py35
+
+matrix:
+    include:
+        - python: 2.7
+          env: TOXENV=py27
+        - python: 3.5
+          env: TOXENV=py35
+       
+install:
+  - travis_retry pip install tox
+script:
+  - travis_retry tox
+notifications:
+  email:
+    - pyramid-checkins@lists.repoze.org
+
 
 install: pip install tox
 
