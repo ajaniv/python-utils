@@ -13,3 +13,8 @@ script: tox
 
 notifications:
   email: false
+  
+branches:
+  only:
+    - master
+    - develop
