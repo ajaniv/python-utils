@@ -83,12 +83,13 @@ def timeit(method):
     """
     @functools.wraps(method)
     def timed(*args, **kw):
-        ts = time.time()
+        """timer wrapper function."""
+        time_start = time.time()
         result = method(*args, **kw)
-        te = time.time()
+        time_end = time.time()
 
         print('%r (%r, %r) %2.2f sec' %
-              (method.__name__, args, kw, te - ts))
+              (method.__name__, args, kw, time_end - time_start))
         return result
 
     return timed
@@ -122,4 +123,5 @@ class Timer(object):
             self.logger.debug(self.msg, self.extra_msg, self.msecs)
 
     def now(self):
+        """return current time."""
         return self.timer_fn()

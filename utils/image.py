@@ -74,16 +74,22 @@ def diff(image1, image2):
     High order image comparison - further accuracy required
     """
     def check_format():
+        """Verify image format.
+        """
         if image1.format != image2.format:
             msg = 'Different image formats {} {}'
             raise ValueError(msg.format(image1.format, image2.format))
 
     def check_size():
+        """Verify image size.
+        """
         if image1.size != image2.size:
             msg = 'Different image size {} {}'
             raise ValueError(msg.format(image1.size, image2.size))
 
     def check_raw_data():
+        """Verify contents.
+        """
         bytes1 = image1.tobytes()
         bytes2 = image2.tobytes()
         if len(bytes1) != len(bytes2) or bytes1 != bytes2:
