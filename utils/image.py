@@ -1,8 +1,12 @@
-'''
-Created on Dec 14, 2013
+"""
+.. module::  utils.image
+   :synopsis:  Image  utilities module.
 
-@author: ajaniv
-'''
+The *image* module contains a collection of image helper functions
+and classes.
+
+
+"""
 
 import base64
 import PIL
@@ -26,16 +30,16 @@ def read_image(file_path):
         return ifile.read()
 
 
-def encode_file(file, encoder_name=DEFAULT_CODEC_NAME):
+def encode_file(file_handle, encoder_name=DEFAULT_CODEC_NAME):
     """
     Encode file stream
     """
     try:
-        file.seek(0)
-        data = encode(file.read(), encoder_name)
+        file_handle.seek(0)
+        data = encode(file_handle.read(), encoder_name)
     except ValueError:
-        if file.closed:
-            with open(file.name, "rb") as image_file:
+        if file_handle.closed:
+            with open(file_handle.name, "rb") as image_file:
                 data = encode(image_file.read(), encoder_name)
         else:
             raise
