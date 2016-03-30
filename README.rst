@@ -28,7 +28,7 @@ Notes
 
 * pandoc was used to convert from .rst to .md:
 
-  ``pandoc -f rst -t markdown_github -o READE.md README.rst``
+  ``pandoc -f rst -t markdown_github -o README.md README.rst``
   
 * check-manifest was run from the command line.  Could not get it
   to work from within tox.  There was an error in handling '~'
