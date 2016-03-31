@@ -1,0 +1,2 @@
+# Common requirements
+Pillow==3.1.1

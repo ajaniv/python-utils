@@ -1,0 +1,7 @@
+# dev tools
+-r code_style.txt
+-r testing.txt
+-r documentation.txt
+check-manifest==0.31
+python-dateutil==2.5.2
+tox==2.3.1

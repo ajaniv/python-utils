@@ -1,0 +1,4 @@
+# testing tools requirements
+coverage==4.0.3
+mock==1.3.0
+
