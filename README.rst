@@ -1,7 +1,7 @@
 Python utitilies project
 ========================
 
-The python-utils project intent is to help development of python and 
+The *python-basic-utils* project intent is to help development of python and 
 Django applications.  It was initially derived from a collection of 
 code snippets used across several projects.
 

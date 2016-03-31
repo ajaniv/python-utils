@@ -1,4 +1,4 @@
-# django-core-utils travis config file
+# python-basic-utils travis config file
 # TODO: change email address
 
 language: python
