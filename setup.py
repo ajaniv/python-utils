@@ -15,9 +15,9 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='python-basic-utils',
+    name='python-core-utils',
     version='0.1.0',
-    description='Simple python utility functions',
+    description='Python core utility functions',
     long_description=long_description,
     url='https://github.com/ajaniv/python-utils',
     author='Amnon Janiv',
@@ -38,7 +38,7 @@ setup(
         'Programming Language :: Python :: 3.5',
     ],
 
-    keywords='python utility functions',
+    keywords='python core utility functions',
     packages=find_packages(exclude=['contrib', 'docs', 'tests']),
     install_requires=['Pillow==3.1.1'],
     extras_require={
