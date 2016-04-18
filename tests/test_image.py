@@ -1,20 +1,15 @@
 """
-
-..  module:: utils.tests.test_image.py
-    :synopsis: image utilities unit test module
-
-
-
-
-.. moduleauthor:: Amnon Janiv <amnon.janiv@obeliusmedia.com>
-
+..  module:: tests.test_image.py
+    :synopsis: image utilities unit test module.
+image utilities unit test module
 """
 
+from __future__ import absolute_import
 import io
 import os
 import unittest
 from PIL import Image
-from utils import image
+from python_core_utils import image
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 

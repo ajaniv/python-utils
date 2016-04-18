@@ -1,15 +1,16 @@
 """
-.. module::  libs.core.tests.test_utils
-   :synopsis: libs.core.utils unit test module.
+.. module::  tests.test_core
+   :synopsis: python_core_utils core unit test module.
 
-The *test_utils* is libs.core.utils  unit test module.
+python_core_utils core unit test module.
 
 """
+from __future__ import absolute_import
 import os
 import json
 import unittest
 
-from utils import core
+from python_core_utils import core
 
 
 class UtilsTestCase(unittest.TestCase):
