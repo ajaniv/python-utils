@@ -1,6 +1,6 @@
 """
-.. module::  utils.image
-   :synopsis:  Image  utilities module.
+.. module::  python_core_utils.image
+   :synopsis:  python_core_utils image  utilities module.
 
 The *image* module contains a collection of image helper functions
 and classes.
@@ -9,6 +9,7 @@ and classes.
 """
 
 import base64
+
 import PIL
 
 DEFAULT_CODEC_NAME = 'base64'

@@ -19,7 +19,7 @@ setup(
     version='0.1.0',
     description='Python core utility functions',
     long_description=long_description,
-    url='https://github.com/ajaniv/python-utils',
+    url='https://github.com/ajaniv/python-core-utils',
     author='Amnon Janiv',
     author_email='amnon.janiv@ondalear.com',
     license='MIT',

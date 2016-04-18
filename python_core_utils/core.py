@@ -1,6 +1,6 @@
 """
-.. module::  utils.core
-   :synopsis:  Python  utilities module.
+.. module::  python_core_utils.core
+   :synopsis:  Python core  utilities module.
 
 The *core* module contains a collection of Python helper functions
 and classes.
@@ -8,12 +8,12 @@ and classes.
 
 """
 from __future__ import print_function
-import time
+
+import functools
+import logging
 import os
 import shutil
-import logging
-import functools
-
+import time
 
 _logger = logging.getLogger(__name__)
 
