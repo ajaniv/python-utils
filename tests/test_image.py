@@ -55,9 +55,6 @@ class ImageTestCase(BaseImageTestCase):
             encoded_image = image.encode_file(image_file)
             self.assertTrue(encoded_image)
 
-        image.encode_file(image_file)
-        self.assertTrue(encoded_image)
-
 
 class PngImageTestCase(BaseImageTestCase):
     """
