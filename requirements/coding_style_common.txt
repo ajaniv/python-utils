@@ -1,4 +1,4 @@
-# PEP8 code linting, which we run on all commits.
+# code style requirements file
 flake8==3.2.1
 pep8==1.7.0
 pylint==1.6.4
