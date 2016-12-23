@@ -1,7 +1,4 @@
-# dev tools
--r code_style.txt
--r testing.txt
--r documentation.txt
+# dev tools requirements file
+
 check-manifest==0.34
-python-dateutil==2.6.0
 tox==2.5.0

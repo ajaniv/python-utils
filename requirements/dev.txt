@@ -1,3 +1,7 @@
--r common.txt
+# development environment requirements file
+-r env_common.txt
+-r coding_style_common.txt
+-r testing.txt
+-r documentation_common.txt
 -r dev_tools.txt
 
