@@ -1,2 +1,2 @@
 # Production environment requirements file
--r env_common.txt
+-r common/core.txt

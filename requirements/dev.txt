@@ -1,7 +1,7 @@
 # development environment requirements file
--r env_common.txt
--r coding_style_common.txt
--r testing.txt
--r documentation_common.txt
--r dev_tools.txt
+-r common/core.txt
+-r common/coding_style.txt
+-r common/testing.txt
+-r common/documentation.txt
+-r common/dev_tools.txt
 
