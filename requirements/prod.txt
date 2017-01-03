@@ -1,0 +1,2 @@
+# Production environment requirements file
+-r project/core.txt

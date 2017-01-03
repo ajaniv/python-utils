@@ -13,7 +13,7 @@ Dependencies
 Runtime
 ^^^^^^^^^^^
 
-* Pillow 3.1.1
+* Pillow
 
 Development
 ^^^^^^^^^^^
@@ -26,7 +26,7 @@ Development
 Notes
 ^^^^^
 
-* pandoc was used to convert from .rst to .md:
+* pandoc can be used to convert from .rst to .md:
 
   ``pandoc -f rst -t markdown_github -o README.md README.rst``
   

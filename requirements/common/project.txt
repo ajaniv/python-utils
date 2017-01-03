@@ -1,0 +1,2 @@
+# project requirements
+-r python_core_utils.txt
