@@ -16,7 +16,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='python-core-utils',
-    version='0.2.0',
+    version='0.3.0',
     description='Python core utility functions',
     long_description=long_description,
     url='https://github.com/ajaniv/python-core-utils',
@@ -36,11 +36,12 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6'
     ],
 
     keywords='python core utility functions',
     packages=find_packages(exclude=['contrib', 'docs', 'tests']),
-    install_requires=['Pillow==3.4.2'],
+    install_requires=['Pillow==4.1.1'],
     extras_require={
         'dev': ['check-manifest'],
         'test': ['coverage'],
