@@ -1,4 +1,4 @@
 # dev tools requirements file
-
-check-manifest==0.35
-tox==2.7.0
+docutils==0.14
+check-manifest==0.37
+tox==3.2.1
