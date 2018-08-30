@@ -5,7 +5,7 @@ The *python-core-utils* project intent is to help development of python and
 Django applications.  It was initially derived from a collection of 
 code snippets used across several projects.
 
-It was developed for both python 2.7, 3.5, and 3.6
+It was developed for both python 2.7, 3.5, 3.6, and 3.7
 
 Dependencies
 ------------
