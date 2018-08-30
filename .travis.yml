@@ -1,5 +1,4 @@
 # python-basic-utils travis config file
-# TODO: change email address
 
 language: python
 
@@ -11,6 +10,8 @@ matrix:
           env: TOXENV=py35
         - python: 3.6
           env: TOXENV=py36
+        - python: 3.7
+          env: TOXENV=py37
        
 install:
   - travis_retry pip install tox
